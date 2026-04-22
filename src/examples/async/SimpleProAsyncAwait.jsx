@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function SimpleAsyncAwait() {
+export default function SimpleProAsyncAwait() {
   const [name, setName] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,8 @@ export default function SimpleAsyncAwait() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("https://pokeapi.co/api/v2/pokemon/1");
+        const res = await fetch("https://pokeapi.co/api/v2/pokemon/1")
+
         if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
         const data = await res.json();
         setName(data.name);

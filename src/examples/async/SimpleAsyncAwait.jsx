@@ -13,11 +13,11 @@ export default function SimpleAsyncAwait() {
     getData();
   }, []);
 
-//    useEffect(() => {
-//     fetch("https://pokeapi.co/api/v2/pokemon/1")
-//       .then((res) => res.json())
-//       .then((data) => setName(data.name));
-//   }, []);
+  //  useEffect(() => {
+  //   fetch("https://pokeapi.co/api/v2/pokemon/1")
+  //     .then((res) => res.json())
+  //     .then((data) => setName(data.name));
+  // }, []);
 
   return (
     <div className="flex flex-col items-center gap-2 p-6 bg-gray-800 text-white rounded-xl">
