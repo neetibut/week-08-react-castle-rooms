@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Castle from "./components/01_Castle";
-import SimpleAsyncAwait from "./examples/async/SimpleAsyncAwait"
+// import SimpleAsyncAwait from "./examples/async/SimpleAsyncAwait"
 
 export default function App() {
   // creating state variables
@@ -20,10 +20,10 @@ export default function App() {
   return (
     <div className="pb-80 py-10 gap-y-4 flex flex-col justify-center items-center min-h-screen bg-gray-800 text-white">
       <p className="text-purple-300">
-        Message for JSD12: {" "}
+        Message for Secret Room: {" "}
         <span className="text-yellow-300">
           {/* question or waiting for a message */}
-          {question ? question : "Waiting for a message..."}
+          {question ? `✅ ${question}` : "⏳ Waiting for a message..."}
         </span>
       </p>
       <textarea
@@ -36,11 +36,11 @@ export default function App() {
         Reply from Secret Room:{" "}
         <span className="text-yellow-300">
           {/* answer or waiting for a reply */}
-          {answer ? answer : "Waiting for a reply..."}
+          {answer ? `✅ ${answer}` : "⏳ Waiting for a reply..."}
         </span>
       </p>
       <Castle question={question} answer={answer} handleAnswer={handleAnswer} />
-      <SimpleAsyncAwait />
+      {/* <SimpleAsyncAwait /> */}
     </div>
   );
 }
