@@ -1,6 +1,10 @@
-import {useState} from 'react'
+import { useState, useContext } from 'react'
+import { MessageContext } from "../contexts/messageContext/MessageContext"
 
-export default function SecretRoom({question, answer, handleAnswer}) {
+export default function SecretRoom() {
+
+ const {question, answer, handleAnswer} = useContext(MessageContext)
+
   return (
     <div className="flex flex-col justify-center items-center py-10 gap-y-4 bg-gray-700 w-[90%]">
       <h1>SecretRoom</h1>

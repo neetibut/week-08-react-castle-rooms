@@ -1,21 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MessageContext } from "./contexts/messageContext/MessageContext"
 import Castle from "./components/01_Castle";
 // import SimpleAsyncAwait from "./examples/async/SimpleAsyncAwait"
 
 export default function App() {
-  // creating state variables
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("")
 
-  const handleQuestion = (e) => {
-    console.log(e);
-    setQuestion(e.target.value);
-  };
-
-  const handleAnswer = (e) => {
-    console.log(e);
-    setAnswer(e.target.value);
-  };
+  const {question, handleQuestion, answer} = useContext(MessageContext)
 
   return (
     <div className="pb-80 py-10 gap-y-4 flex flex-col justify-center items-center min-h-screen bg-gray-800 text-white">
@@ -39,7 +29,7 @@ export default function App() {
           {answer ? `✅ ${answer}` : "⏳ Waiting for a reply..."}
         </span>
       </p>
-      <Castle question={question} answer={answer} handleAnswer={handleAnswer} />
+      <Castle />
       {/* <SimpleAsyncAwait /> */}
     </div>
   );
